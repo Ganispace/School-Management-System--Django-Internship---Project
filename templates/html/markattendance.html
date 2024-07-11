@@ -1,0 +1,22 @@
+<form method="post">
+    {% csrf_token %}
+    <input type="date" name="date" required>
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <h4>{{request.user.username}}</h4>
+                <th>Present</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td><input type="checkbox" name="{{ student.id }}"></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,28 @@
+{% extends 'html/base.html' %}
+{% block title %}Student Marks{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-4 card shadow-lg mx-4 h-100">
+        <div class="card-body">
+            <h3>Enter student marks</h3>
+            {% csrf_token %}
+                {% for i in k %}
+                    {{i}}
+                {% endfor %}
+        <div class="row">
+                    <div class="col">
+                        <input type="reset" value="Clear" class="btn btn-danger form-control">
+                    </div>
+                    <div class="col">
+                        <input type="submit" value="submit" class="btn btn-success form-control">
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+    
+
+    
+        
+    
